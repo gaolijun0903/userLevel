@@ -1,0 +1,268 @@
+[v-cloak] {
+    display: none;
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+}
+body {
+  background: #fafafa;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  color:#000;
+  margin: 0;
+  padding: 0;
+}
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+ul,li{
+	list-style: none;
+}
+.scroll-container {
+  width: 100%;
+  height: 100%;
+}
+.scroll-container .scroll-slide {
+  font-size: 28px;
+  height: auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.userLevel{
+	padding-top:  0.746667rem;
+	position: relative;
+	color: #FFFFFF;
+}
+.userLevel .currentLevel{
+	height: 6.226667rem;
+}
+.userLevel .levelTitle{
+	position: absolute;
+	top: 1.493333rem;
+	left: 1.28rem;
+	font-size: 0.8rem;
+	/*font-weight: lighter;*/
+}
+.userLevel .ordersMileage{
+	position: absolute;
+	top: 2.826667rem;
+	left: 1.28rem;
+}
+.userLevel .ordersMileage .orders{
+	padding:0 0.106667rem;
+	/*font-weight:;*/
+}
+.userLevel .progressBar{
+	position: relative;
+	margin: 0 auto;
+	/*width: 8.0rem;*/
+	color: #C8C8C8;
+	font-size: 0.4rem;
+}
+.userLevel .progressBar .linewraper{
+	margin: 0 auto 0.213333rem;
+	
+	width: 7.5rem;
+	height: 0.053333rem;
+	background: #C8C8C8;
+}
+.userLevel .progressBar .linewraper .linebar{
+	width: 60%;
+	height: 0.053333rem;
+	background: #323232;
+}
+.userLevel .progressBar .points{
+	display: flex;
+}
+.userLevel .progressBar .levelPoint{
+	flex: 1;
+	width: 2.5rem;
+	text-align: center;
+}
+.userLevel .progressBar .levelPoint .progressPoint{
+	margin: 0 auto 0.213333rem;
+	width: 0.133333rem;
+	height: 0.133333rem;
+	border-radius: 50%;
+	background: #C8C8C8;
+}
+.userLevel .guide{
+	color: #646464;
+	font-size: 0.4rem;
+	text-align: center;
+	margin: 0.32rem auto 0.96rem;
+}
+.userLevel .guide .guideNum{
+	color: #ff5252;
+	font-weight: 100;
+}
+.userLevelRights{
+	width: 10.0rem;
+	height: 500px; /*TODO*/
+	overflow-x: hidden;
+}
+.userLevelRights .userLevelRightsTitle{
+	margin-bottom: 0.32rem;
+	padding: 0 0.746667rem;
+	font-size: 0.453333rem;
+	font-weight: 400;
+	color: #323232;
+}
+.userLevelRights .swiper-container-h {
+  width: 16.0rem;
+  height: 80%; /*TODO*/
+  margin-left: -3.0rem;
+  overflow: visible;
+  /*border: 1px solid red;*/
+}
+.userLevelRights .swiper-container-h .swiper-slide-h {
+	height: 5.2rem;
+	border-radius: 0.106667rem;
+  font-size: 0.32rem;
+  background: #fff;
+}
+.userLevelRights .swiper-slide-h .levelTitle{
+	padding-top:0.32rem;
+}
+.userLevelRights .swiper-slide-h .levelTitleBar{
+	margin-right: 0.32rem;
+	display: inline-block;
+	width: 0.106667rem;
+	height:0.32rem;
+	background: #c8c8c8;
+}
+.userLevelRights .swiper-slide-h .levelTitleText{
+	display: inline-block;
+}
+.userLevelRights .rightsList{
+	padding: 0.746667rem 0.32rem 0;
+	/*height: 300px;*/
+}
+.userLevelRights .rightsList ul{
+	/*height: 300px;*/
+	display: flex;
+}
+.userLevelRights .rightsList .rightItem{
+	flex: 1;
+	width: 25%;
+	text-align: center;
+	border: 1px solid yellow;
+}
+.userLevelRights .rightsList .rightIcon{
+	width: 0.533333rem;
+	height: 0.533333rem;
+	margin: 0 auto;
+}
+.userLevelRights .rightsList .icon1{
+	background: url(../img/right1-baoxian.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.userLevelRights .swiper-container-h .swiper-pagination{
+	bottom:  -0.506667rem;
+}
+.userLevelRights .swiper-container-h .swiper-pagination .swiper-pagination-bullet{
+	width: 0.186667rem;
+	height: 0.186667rem;
+	background: #e1e1e1;
+}
+.userLevelRights .swiper-container-h .swiper-pagination .swiper-pagination-bullet-active{
+	background: #888888;
+}
+
+.detail{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0,0,0,.6);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1000;
+}
+.detail .swiperin{
+    background-color: rgba(0,0,0,0);
+    position: absolute;
+    top: 43%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    width: 100%;
+    min-height: 700px;
+    box-sizing: border-box;
+    padding-bottom: 70px;
+}
+.detail .swiperin .swiper-slide .contain{
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: 0 40px;
+    width: 80%;
+    margin: 0 10%;
+    border-radius: 10px;
+    min-height: 620px;
+}
+.detail .cancel{
+    width: 72px;
+    height: 72px;
+    background: url("../img/cancel.png") no-repeat center center;
+    background-size: 100%;
+    position: absolute;
+    top: 76%;
+    left: 50%;
+    margin-left: -35px;
+
+}
+.detail .swiperin .swiper-slide header{
+    width: 100%;
+    height: 192px;
+    border-bottom: 1px solid #c8c8c8;
+    box-sizing: border-box;
+    padding: 44px 0;
+    color: #888;
+}
+.detail .swiperin .swiper-slide header div{
+    float: left;
+    background-color: #ffffff;
+    margin-right: 16px;
+}
+.detail .swiperin .swiper-slide header div img{
+    width: 104px;
+    height: 104px;
+}
+.detail .swiperin .swiper-slide header h3{
+    font-size: 34px;
+    color: #323232;
+    padding: 16px 0 12px 0;
+}
+.detail .swiperin .swiper-slide .intro{
+    padding-top: 30px;
+}
+.detail .intro h4{
+    color: #323232;
+    font-size: 30px;
+}
+.detail .intro p.text{
+    line-height: 36px;
+    padding: 14px 0 36px 0;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: 28px;
+    color: #888;
+}
+
+.detail .swiper-pagination-bullet {
+    width: 14px;
+    height: 14px;
+    background: #fff;
+    opacity: .3;
+}
+.detail .swiper-pagination-bullet-active {
+    background: #fff;
+    opacity: 1;
+}
