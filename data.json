@@ -8,19 +8,27 @@
 "userLevelRights":[
     	{
     		"levelTitle":"银卡会员",
-    		"cardId":1
+    		"cardId":1,
+    		"flag":192,
+    		"rightsArr":[1,1,0,0,0,0,0,0]
     	},
     	{
     		"levelTitle":"金卡会员",
-    		"cardId":2
+    		"cardId":2,
+    		"flag":241,
+    		"rightsArr":[1,1,1,1,1,0,0,0]
     	},
     	{
     		"levelTitle":"白金卡会员",
-    		"cardId":3
+    		"cardId":3,
+    		"flag":255,
+    		"rightsArr":[1,1,1,1,1,1,1,1]
     	},
     	{
     		"levelTitle":"钻石卡会员",
-    		"cardId":4
+    		"cardId":4,
+    		"flag":255,
+    		"rightsArr":[1,1,1,1,1,1,1,1]
     	}
     ],
 "rightsList":[
@@ -31,7 +39,7 @@
 			"logoNo":"./img/right1-no.png",
 			"subtitle":"",
 			"description":"易到为每一位乘客的每一次出行进行百万级保险的投保，使乘客在出行过程中的人身和财产安全得到进一步保障，保险及理赔详情，参看《易到百万出行险计划》。",
-			"target":27
+			"target":15
 		},
 		{
 			"rightId":2,
@@ -40,7 +48,7 @@
 			"logoNo":"./img/right2-no.png",
 			"subtitle":"",
 			"description":"易到会员可享受平台与品牌合作商联盟合作的商家提供的联盟专属权益或活动优享权益，不同会员级别所享受的权益力度不同。",
-			"target":27
+			"target":15
 		},
 		{
 			"rightId":3,
@@ -49,7 +57,7 @@
 			"logoNo":"./img/right3-no.png",
 			"subtitle":"",
 			"description":"易到金卡以上会员在商城购买或积分兑换商品时，可享受特别的优惠政策及兑换权益，不同级别的会员所享受的优惠力度不同。",
-			"target":11
+			"target":7
 		},
 		{
 			"rightId":4,
@@ -58,16 +66,16 @@
 			"logoNo":"./img/right4-no.png",
 			"subtitle":"",
 			"description":"对于升级至金卡，白金卡和钻石卡的用户，可获得用车福包，福包内容涵盖优惠券，红包，积分等多种好礼。",
-			"target":11
+			"target":7
 		},
 		{
 			"rightId":5,
-			"title":"生日礼遇",
-			"logo":"./img/right5-birth.png",
-			"logoNo":"./img/right5-no.png",
+			"title":"专属客服",
+			"logo":"./img/right8-zhuanshu.png",
+			"logoNo":"./img/right8-no.png",
 			"subtitle":"",
-			"description":"易到为白金卡和钻石卡会员准备了生日礼遇特权，可在生日当天享受易到提供的一系列特别权益，包括用车优惠等，只需完善生日信息，即可生效。",
-			"target":3
+			"description":"易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。",
+			"target":7
 		},
 		{
 			"rightId":6,
@@ -89,12 +97,12 @@
 		},
 		{
 			"rightId":8,
-			"title":"专属客服",
-			"logo":"./img/right8-zhuanshu.png",
-			"logoNo":"./img/right8-no.png",
+			"title":"生日礼遇",
+			"logo":"./img/right5-birth.png",
+			"logoNo":"./img/right5-no.png",
 			"subtitle":"",
-			"description":"易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。",
-			"target":11
+			"description":"易到为白金卡和钻石卡会员准备了生日礼遇特权，可在生日当天享受易到提供的一系列特别权益，包括用车优惠等，只需完善生日信息，即可生效。",
+			"target":3
 		}
 	]
 }

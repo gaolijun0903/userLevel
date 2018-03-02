@@ -74,15 +74,11 @@
 					      	</div>
 					      	<div class="rightsList">
 					      		<ul>
-					      			<li class="rightItem" v-for="right in rightsList">
+					      			<li class="rightItem" v-for="(right,idx) in rightsList">
 					      				<div class="rightIcon">
-					      					<img v-if="right.target%2" :src="right.logo" :alt="right.title" />
-					      					<img v-else="right.target%2" :src="right.logoNo" :alt="right.title" />
+					      					<img v-if="item.rightsArr[idx]" :src="right.logo" :alt="right.title" />
+					      					<img v-else="item.rightsArr[idx]" :src="right.logoNo" :alt="right.title" />
 					      				</div>
-					      				<div class="rightText">{{right.target}}</div>
-					      				<div class="rightText">{{item.cardId}}</div>
-					      				<div class="rightText">{{right.target%2}}</div>
-					      				
 					      				<div class="rightText">{{right.title}}</div>
 					      			</li>
 					      		</ul>
