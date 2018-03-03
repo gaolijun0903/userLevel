@@ -9,7 +9,7 @@ html, body {
 body {
   background: #fafafa;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-  font-size: 24px;
+  /*font-size: 24px;*/
   color:#000;
   margin: 0;
   padding: 0;
@@ -27,13 +27,13 @@ ul,li{
   height: 100%;
 }
 .scroll-container .scroll-slide {
-  font-size: 28px;
+  /*font-size: 28px;*/
   height: auto;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 .userLevel{
-	padding-top:  0.746667rem;
+	padding-top: 0.746667rem;
 	position: relative;
 	color: #FFFFFF;
 }
@@ -51,44 +51,68 @@ ul,li{
 	position: absolute;
 	top: 2.826667rem;
 	left: 1.28rem;
+	font-size: 0.373333rem;
 }
 .userLevel .ordersMileage .orders{
 	padding:0 0.106667rem;
-	/*font-weight:;*/
+	font-weight: 600;
 }
 .userLevel .progressBar{
 	position: relative;
-	margin: 0 auto;
-	/*width: 8.0rem;*/
-	color: #C8C8C8;
-	font-size: 0.4rem;
+	padding: 0.1px;
+	height: 0.826667rem;
 }
 .userLevel .progressBar .linewraper{
-	margin: 0 auto 0.213333rem;
-	
+	margin: 0.0533rem auto 0.2933rem;
 	width: 7.5rem;
 	height: 0.053333rem;
 	background: #C8C8C8;
 }
 .userLevel .progressBar .linewraper .linebar{
-	width: 60%;
+	width: 60%;  /*TODO*/
 	height: 0.053333rem;
 	background: #323232;
 }
 .userLevel .progressBar .points{
+	position:  absolute;
+	top: 0;
 	display: flex;
+	width: 100%;
+	height:0.213333rem;
 }
-.userLevel .progressBar .levelPoint{
+.userLevel .progressBar .points .progressPointBox,.userLevel .progressBar .texts .progressText{
 	flex: 1;
-	width: 2.5rem;
-	text-align: center;
+	width:2.5rem;
 }
-.userLevel .progressBar .levelPoint .progressPoint{
-	margin: 0 auto 0.213333rem;
+.userLevel .progressBar .points .progressPoint{
+	margin: 0.02rem auto;
 	width: 0.133333rem;
 	height: 0.133333rem;
 	border-radius: 50%;
 	background: #C8C8C8;
+}
+.userLevel .progressBar .points .progressPointPass{
+	background: #323232;
+}
+.userLevel .progressBar .points .progressPointCur{
+	margin: 0 auto;
+	width: 0.213333rem;
+	height: 0.213333rem;
+	border-radius: 50%;
+	background: #FFFFFF;
+	border:  0.053333rem solid #323232;
+}
+.userLevel .progressBar .texts{
+	display: flex;
+	text-align: center;
+	color: #C8C8C8;
+	font-size: 0.4rem;
+}
+.userLevel .progressBar .texts .progressTextPass{
+	color: #646464;
+}
+.userLevel .progressBar .texts .progressTextCur{
+	color: #323232;
 }
 .userLevel .guide{
 	color: #646464;
@@ -98,35 +122,34 @@ ul,li{
 }
 .userLevel .guide .guideNum{
 	color: #ff5252;
-	font-weight: 100;
+	font-weight: 400;
 }
 .userLevelRights{
 	width: 10.0rem;
-	height: 500px; /*TODO*/
+	height: 6.58rem; 
 	overflow-x: hidden;
 }
-.userLevelRights .userLevelRightsTitle{
+.userLevelRights .userLevelRightsTitle, .userActives .userActivesTitle{
 	margin-bottom: 0.32rem;
 	padding: 0 0.746667rem;
 	font-size: 0.453333rem;
+	line-height: 0.454rem;
 	font-weight: 400;
 	color: #323232;
 }
 .userLevelRights .swiper-container-h {
-  width: 16.0rem;
-  height: 80%; /*TODO*/
-  margin-left: -3.0rem;
+  width: 17.4rem;
+  margin-left: -3.7rem;
   overflow: visible;
-  /*border: 1px solid red;*/
 }
 .userLevelRights .swiper-container-h .swiper-slide-h {
 	height: 5.2rem;
 	border-radius: 0.106667rem;
-  font-size: 0.32rem;
-  background: #fff;
+	background: #fff;
 }
 .userLevelRights .swiper-slide-h .levelTitle{
 	padding-top:0.32rem;
+	font-size: 0;
 }
 .userLevelRights .swiper-slide-h .levelTitleBar{
 	margin-right: 0.32rem;
@@ -137,6 +160,8 @@ ul,li{
 }
 .userLevelRights .swiper-slide-h .levelTitleText{
 	display: inline-block;
+	font-size: 0.373333rem;
+	line-height: 0.3733rem;
 }
 .userLevelRights .rightsList{
 	padding: 0.746667rem 0.32rem 0;
@@ -150,17 +175,19 @@ ul,li{
 	margin-bottom: 0.746667rem;
 	width: 25%;
 	text-align: center;
-	/*border: 1px solid yellow;*/
 }
 .userLevelRights .rightsList .rightItem .rightIcon{
 	width: 0.533333rem;
 	height: 0.533333rem;
+	font-size: 0;
 	margin: 0 auto 0.32rem;
 }
 .userLevelRights .rightsList .rightItem .rightText{
-	color: #323232;
+	color: #323232; font-size: 0.32rem; line-height: 0.32rem;
 }
-
+.userLevelRights .rightsList .rightItem .rightTextNo{
+	color: #C8C8C8; font-size: 0.32rem; line-height: 0.32rem;
+}
 .userLevelRights .swiper-container-h .swiper-pagination{
 	bottom:  -0.506667rem;
 }
@@ -171,6 +198,40 @@ ul,li{
 }
 .userLevelRights .swiper-container-h .swiper-pagination .swiper-pagination-bullet-active{
 	background: #888888;
+}
+.userActives{
+	margin-top: 0.96rem;
+}
+.userActives .userActivesList{
+	padding: 0 0.746667rem 0.426667rem;
+}
+.userActives .userActiveItem{
+	margin-bottom: 0.32rem;
+	background: #FFFFFF;
+	border-radius: 0.106667rem;
+  	font-size: 0.32rem;
+  	padding: 0.533rem;
+}
+.userActives .userActiveItem .activeLogo{
+	display: inline-block;
+	width: 0.613333rem;
+	height: 0.613333rem;
+	margin-right: 0.32rem;
+	vertical-align: top;
+}
+.userActives .userActiveItem .activeText{
+	display: inline-block;
+}
+.userActives .userActiveItem .activeText .activeTitle{
+	margin-bottom: 0.32rem;
+	color: #323232;
+	font-size: 0.4rem;
+	line-height:  0.4rem;
+}
+.userActives .userActiveItem .activeText .activeDesc{
+	color: #888888;
+	font-size: 0.32rem;
+	line-height:  0.32rem;
 }
 
 .detail{

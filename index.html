@@ -10,9 +10,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="format-detection" content="telephone=no">
 	<title>会员中心</title>
-	<script src="lib/viewport.js"></script>
-	<script src="lib/flexible.js"></script>
+	<!--<script src="lib/viewport.js"></script>-->
+	
 	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<script src="lib/flexible.js"></script>
 	<link rel="stylesheet" type="text/css" href="lib/swiper.min.css"/>
 	<script src="lib/vue.min.js"></script>
 	<!--<script src="lib/jsonp.js"></script>-->
@@ -30,38 +31,38 @@
 	<div id="app" class="swiper-container scroll-container" v-cloak>
 	    <div class="swiper-wrapper scroll-wrapper">
 	      	<div class="swiper-slide scroll-slide">
-	            <div class="userLevel">
+	            <div class="userLevel" v-if="cards.length && userLevelRights.length">
 					<div class="currentLevel">
-						<img src="img/card1.png" width="100%" height="100%"/>
+						<img :src="cards[userInfo.level].src" width="100%" height="100%"/>
 					</div>
-					<div class="levelTitle">银卡会员</div>
+					<div class="levelTitle">{{userLevelRights[userInfo.level].levelTitle}}</div>
 					<div class="ordersMileage">
-						本月已完成<span class="orders">3</span>单 &nbsp;| <span class="orders">45</span>里程
+						本月已完成<span class="orders">{{userInfo.orders}}</span>单 &nbsp;| <span class="orders">{{userInfo.mileage}}</span>里程
 					</div>
 					<div class="progressBar">
-						<div class="linewraper"><div class="linebar"></div></div>
+						<div class="linewraper"><div class="linebar" v-bind:style="{width:lineBar}"></div></div>
 						<div class="points">
-							<div class="levelPoint">
-								<div class="progressPoint"></div>
-								<div class="progressText">银卡</div>
+							<div class="progressPointBox">
+								<div class="progressPoint progressPointPass"></div>
 							</div>
-							<div class="levelPoint">
-								<div class="progressPoint"></div>
-								<div class="progressText">金卡</div>
+							<div class="progressPointBox">
+								<div class="progressPoint  progressPointCur"></div>
 							</div>
-							<div class="levelPoint">
+							<div class="progressPointBox">
 								<div class="progressPoint"></div>
-								<div class="progressText">白金卡</div>
 							</div>
-							<div class="levelPoint">
+							<div class="progressPointBox">
 								<div class="progressPoint"></div>
-								<div class="progressText">钻石卡</div>
 							</div>
 						</div>
+						<div class="texts">
+							<div class="progressText progressTextPass">银卡</div>
+							<div class="progressText progressTextCur">金卡</div>
+							<div class="progressText">白金卡</div>
+							<div class="progressText">钻石卡</div>
+						</div>
 					</div>
-					<div class="guide">
-						差&nbsp;<span class="guideNum">1</span>&nbsp;单或&nbsp;<span class="guideNum">5</span>&nbsp;里程，升级到金卡会员&nbsp;&gt;
-					</div>
+					<div class="guide" v-html="guide"></div>
 				</div>
 				<div class="userLevelRights">
 					<div class="userLevelRightsTitle">会员权益</div>
@@ -75,11 +76,18 @@
 					      	<div class="rightsList">
 					      		<ul>
 					      			<li class="rightItem" v-for="(right,idx) in rightsList">
-					      				<div class="rightIcon">
-					      					<img v-if="item.rightsArr[idx]" :src="right.logo" :alt="right.title" />
-					      					<img v-else="item.rightsArr[idx]" :src="right.logoNo" :alt="right.title" />
+					      				<div class="rightItemCon" v-if="item.rightsArr[idx]">
+					      					<div class="rightIcon">
+						      					<img :src="right.logo" :alt="right.title" width="100%" height="100%"/>
+						      				</div>
+						      				<div class="rightText">{{right.title}}</div>
 					      				</div>
-					      				<div class="rightText">{{right.title}}</div>
+						      			<div class="rightItemCon"  v-else="item.rightsArr[idx]">
+					      					<div class="rightIcon">
+						      					<img :src="right.logoNo" :alt="right.title" width="100%" height="100%"/>
+						      				</div>
+						      				<div class="rightTextNo">{{right.title}}</div>
+					      				</div>	
 					      			</li>
 					      		</ul>
 					      	</div>
@@ -92,20 +100,16 @@
 					<div class="userActivesTitle">会员活动</div>
 					<div class="userActivesList">
 						<ul>
-							<li class="userActiveItem" >
-								<div class="activeLogo"></div>
+							<li class="userActiveItem" v-for="active in userActives">
+								<div class="activeLogo">
+									<img :src="active.logo" width="100%" height="100%"/>
+								</div>
 								<div class="activeText">
-									<div class="activeTitle">积分商城</div>
-									<div class="activeDesc">会员专享优惠</div>
+									<div class="activeTitle">{{active.title}}</div>
+									<div class="activeDesc">{{active.subTitle}}</div>
 								</div>
 							</li>
-							<li class="userActiveItem" >
-								<div class="activeLogo"></div>
-								<div class="activeText">
-									<div class="activeTitle">领任务，赚积分</div>
-									<div class="activeDesc">会员专享优惠</div>
-								</div>
-							</li>
+							
 						</ul>
 					</div>
 				</div>
