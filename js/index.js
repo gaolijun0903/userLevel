@@ -37,12 +37,10 @@ new Vue({
 		    vm.userLevelRights = data.userLevelRights;
 		    vm.userActives = data.userActives;
 		    vm.getUserInfo();
-		    vm.initScroll();
 		    vm.$nextTick(function(){
 		    	vm.initSwiper();
 		  		vm.initDetailSwiper();
 		    })
-		  	
 		  })
 		  .catch(function (error) {
 		    console.log(error);
@@ -62,7 +60,7 @@ new Vue({
 		getUserInfo:function(){
 			this.userInfo = {
 				userId:"",
-				level:3,
+				level:1,
 				orders:13,
 				mileage:15,
 				isSaveLevel:true
@@ -74,7 +72,6 @@ new Vue({
 				
 			}*/
 			
-		
 				
 			if(this.userInfo.level<3){
 				this.guide = '差&nbsp;<span class="guideNum">'+this.leftOrders+'</span>&nbsp;单或&nbsp;<span class="guideNum">'+this.leftMiles+'</span>&nbsp;里程，升级到'+this.userLevelRights[this.userInfo.level+1].levelTitle+'&nbsp;&gt;'
@@ -112,15 +109,7 @@ new Vue({
 		    observer:true ,//修改swiper自己或子元素时，自动初始化swiper
 		    observeParents:true,//修改swiper的父元素时，自动初始化swiper
     	});
-  	},
-  	initScroll:function(){
-  		var scroll = new Swiper('.scroll-container', {
-	      direction: 'vertical',
-	      slidesPerView: 'auto',
-	      freeMode: true
-	    });
   	}
-	
 	
 	
  }

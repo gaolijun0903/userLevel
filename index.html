@@ -21,107 +21,101 @@
 </head>
 <body>
 <div id="app" class="box" v-cloak>
-	<div class="swiper-container scroll-container">
-	    <div class="swiper-wrapper scroll-wrapper">
-	      	<div class="swiper-slide scroll-slide">
-	            <div class="userLevel" v-if="cards.length && userLevelRights.length">
-					<div class="currentLevel">
-						<img :src="cards[userInfo.level].src" width="100%" height="100%"/>
-					</div>
-					<div class="levelTitle">{{userLevelRights[userInfo.level].levelTitle}}</div>
-					<div class="ordersMileage">
-						本月已完成<span class="orders">{{userInfo.orders}}</span>单 &nbsp;| <span class="orders">{{userInfo.mileage}}</span>里程
-					</div>
-					<div class="progressBar">
-						<div class="linewraper"><div class="linebar" v-bind:style="{width:lineBar}"></div></div>
-						<div class="points">
-							<div class="progressPointBox">
-								<div class="progressPoint progressPointPass"></div>
-							</div>
-							<div class="progressPointBox">
-								<div class="progressPoint  progressPointCur"></div>
-							</div>
-							<div class="progressPointBox">
-								<div class="progressPoint"></div>
-							</div>
-							<div class="progressPointBox">
-								<div class="progressPoint"></div>
-							</div>
-						</div>
-						<div class="texts">
-							<div class="progressText progressTextPass">银卡</div>
-							<div class="progressText progressTextCur">金卡</div>
-							<div class="progressText">白金卡</div>
-							<div class="progressText">钻石卡</div>
-						</div>
-					</div>
-					<div class="guide" v-html="guide"></div>
+    <div class="userLevel" v-if="cards.length && userLevelRights.length">
+		<div class="currentLevel">
+			<img :src="cards[userInfo.level].src" width="100%" height="100%"/>
+		</div>
+		<div class="levelTitle">{{userLevelRights[userInfo.level].levelTitle}}</div>
+		<div class="ordersMileage">
+			本月已完成<span class="orders">{{userInfo.orders}}</span>单 &nbsp;| <span class="orders">{{userInfo.mileage}}</span>里程
+		</div>
+		<div class="progressBar">
+			<div class="linewraper"><div class="linebar" v-bind:style="{width:lineBar}"></div></div>
+			<div class="points">
+				<div class="progressPointBox">
+					<div class="progressPoint progressPointPass"></div>
 				</div>
-				<div class="userLevelRights">
-					<div class="userLevelRightsTitle">会员权益</div>
-					<div class="swiper-container swiper-container-h">
-					    <div class="swiper-wrapper">
-					      <div class="swiper-slide swiper-slide-h" v-for="item in userLevelRights">
-					      	<div class="levelTitle">
-					      		<div class="levelTitleBar"></div>
-					      		<div class="levelTitleText">{{item.levelTitle}}</div>
-					      	</div>
-					      	<div class="rightsList">
-					      		<ul>
-					      			<li class="rightItem" v-for="(right,idx) in rightsList" @click='showDetail(idx)'>
-					      				<div class="rightItemCon" v-if="item.rightsArr[idx]">
-					      					<div class="rightIcon">
-						      					<img :src="right.logo" :alt="right.title" width="100%" height="100%"/>
-						      				</div>
-						      				<div class="rightText">{{right.title}}</div>
-					      				</div>
-						      			<div class="rightItemCon"  v-else="item.rightsArr[idx]">
-					      					<div class="rightIcon">
-						      					<img :src="right.logoNo" :alt="right.title" width="100%" height="100%"/>
-						      				</div>
-						      				<div class="rightTextNo">{{right.title}}</div>
-					      				</div>	
-					      			</li>
-					      		</ul>
-					      	</div>
-					      </div>
-					    </div>
-					    <div class="swiper-pagination"></div>
-					</div>
+				<div class="progressPointBox">
+					<div class="progressPoint  progressPointCur"></div>
 				</div>
-				<div class="userActives">
-					<div class="userActivesTitle">会员活动</div>
-					<div class="userActivesList">
-						<ul>
-							<li class="userActiveItem" v-for="active in userActives">
-								<div class="activeLogo">
-									<img :src="active.logo" width="100%" height="100%"/>
-								</div>
-								<div class="activeText">
-									<div class="activeTitle">{{active.title}}</div>
-									<div class="activeDesc">{{active.subTitle}}</div>
-								</div>
-							</li>
-							
-						</ul>
-					</div>
+				<div class="progressPointBox">
+					<div class="progressPoint"></div>
 				</div>
-				
-				<div >
-	                <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
-	                  <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>  
-	                <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
-	                 <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>      
-	               <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
-	               <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
-	               <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
-	               <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
-	               
-	            </div>
-				           
-	        </div>
-	    </div>
+				<div class="progressPointBox">
+					<div class="progressPoint"></div>
+				</div>
+			</div>
+			<div class="texts">
+				<div class="progressText progressTextPass">银卡</div>
+				<div class="progressText progressTextCur">金卡</div>
+				<div class="progressText">白金卡</div>
+				<div class="progressText">钻石卡</div>
+			</div>
+		</div>
+		<div class="guide" v-html="guide"></div>
 	</div>
+	<div class="userLevelRights">
+		<div class="userLevelRightsTitle">会员权益</div>
+		<div class="swiper-container swiper-container-h">
+		    <div class="swiper-wrapper">
+		      <div class="swiper-slide swiper-slide-h" v-for="(item,idx) in userLevelRights">
+		      	<div class="levelTitle">
+		      		<div class="levelTitleBar" :class=" 'bgColor'+idx " ></div>
+		      		<div class="levelTitleText">{{item.levelTitle}}</div>
+		      	</div>
+		      	<div class="rightsList">
+		      		<ul>
+		      			<li class="rightItem" v-for="(right,idx) in rightsList" @click='showDetail(idx)'>
+		      				<div class="rightItemCon" v-if="item.rightsArr[idx]">
+		      					<div class="rightIcon">
+			      					<img :src="right.logo" :alt="right.title" width="100%" height="100%"/>
+			      				</div>
+			      				<div class="rightText">{{right.title}}</div>
+		      				</div>
+			      			<div class="rightItemCon"  v-else="item.rightsArr[idx]">
+		      					<div class="rightIcon">
+			      					<img :src="right.logoNo" :alt="right.title" width="100%" height="100%"/>
+			      				</div>
+			      				<div class="rightTextNo">{{right.title}}</div>
+		      				</div>	
+		      			</li>
+		      		</ul>
+		      	</div>
+		      </div>
+		    </div>
+		    <div class="swiper-pagination"></div>
+		</div>
+	</div>
+	<div class="userActives">
+		<div class="userActivesTitle">会员活动</div>
+		<div class="userActivesList">
+			<ul>
+				<li class="userActiveItem" v-for="active in userActives">
+					<div class="activeLogo">
+						<img :src="active.logo" width="100%" height="100%"/>
+					</div>
+					<div class="activeText">
+						<div class="activeTitle">{{active.title}}</div>
+						<div class="activeDesc">{{active.subTitle}}</div>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+	
+	<div >
+        <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
+          <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>  
+        <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
+         <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>      
+       <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
+       <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
+       <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
+       <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
+       
+    </div>
+	
 	<div class="detail" v-show="isShowDetail">
 	    <div class="swiper-container swiper-container-horizontal swiperin">
 	        <div class="swiper-wrapper">

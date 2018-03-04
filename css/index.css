@@ -1,7 +1,6 @@
 [v-cloak] {
     display: none;
 }
-
 html, body {
   position: relative;
   height: 100%;
@@ -23,15 +22,6 @@ ul,li{
 }
 .box{
 	height: 100%;
-}
-.scroll-container {
-  width: 100%;
-  height: 100%;
-}
-.scroll-container .scroll-slide {
-  height: auto;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
 }
 .userLevel{
 	padding-top: 0.746667rem;
@@ -156,7 +146,19 @@ ul,li{
 	display: inline-block;
 	width: 0.106667rem;
 	height:0.32rem;
+	
+}
+.userLevelRights .levelTitleBar.bgColor0{
 	background: #c8c8c8;
+}
+.userLevelRights .levelTitleBar.bgColor1{
+	background: #c8a03c;
+}
+.userLevelRights .levelTitleBar.bgColor2{
+	background: #646464;
+}
+.userLevelRights .levelTitleBar.bgColor3{
+	background: #323232;
 }
 .userLevelRights .swiper-slide-h .levelTitleText{
 	display: inline-block;
