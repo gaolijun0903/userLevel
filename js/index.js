@@ -6,24 +6,46 @@ new Vue({
     //http:"//market.Yongche.com",
     userInfo: {
 				userId:"",
-				level:0,
+				level:0,  //0-银卡， 1-金卡， 2-白金卡， 3-钻石卡
 				orders:0,
-				mileage:0
+				mileage:0,
+				percent:45,
+				isSaveLevel:false
 			},
 		leftOrders:3,
 		leftMiles:4,
     currentLevel:0,
-    guide:'',
-    lineBar:'50%',
+//  guide:'',
     isShowDetail:false,
     cards:[],
     rightsList:[],
     userLevelRights:[],
     userActives:[]
   },
+	computed:{
+		lineBar:function(){
+			var value = 33*this.userInfo.level;
+			//判断是否保级
+			if(!this.userInfo.isSaveLevel && this.userInfo.level<3 ){
+				value += this.userInfo.percent/3 ;
+			}else{
+				value += 0;
+			}
+			return value+'%';
+		},
+		guide:function(){
+			var str;
+			if(this.userInfo.level<3){
+				str = '差&nbsp;<span class="guideNum">'+this.leftOrders+'</span>&nbsp;单或&nbsp;<span class="guideNum">'+this.leftMiles+'</span>&nbsp;里程，升级到'+this.userLevelRights[this.userInfo.level+1].levelTitle+'&nbsp;&gt;'
+			}else{
+				str = '您已经是最高级别享受贵宾权益';
+//				str = '差'+ this.leftOrders +'单继续享有钻石卡特权';
+			}
+			return str;
+		}
+	},
   created: function(){
   	this.initData();
-  	
   },
   methods:{
   	initData:function (){
@@ -60,23 +82,11 @@ new Vue({
 		getUserInfo:function(){
 			this.userInfo = {
 				userId:"",
-				level:1,
+				level:2,
 				orders:13,
 				mileage:15,
+				percent:45,
 				isSaveLevel:true
-			}
-			//判断是否保级
-			/*if(this.userInfo.isSaveLevel){
-					
-			}else{
-				
-			}*/
-			
-				
-			if(this.userInfo.level<3){
-				this.guide = '差&nbsp;<span class="guideNum">'+this.leftOrders+'</span>&nbsp;单或&nbsp;<span class="guideNum">'+this.leftMiles+'</span>&nbsp;里程，升级到'+this.userLevelRights[this.userInfo.level+1].levelTitle+'&nbsp;&gt;'
-			}else{
-				this.guide = '您已经是最高级别享受贵宾权益'
 			}
 		},
 		showDetail:function(idx){
@@ -86,6 +96,9 @@ new Vue({
 		closeDetail:function(){
 			console.log(111)
 			this.isShowDetail = false;
+		},
+		showRules:function(){
+			window.location.href = "./rule.html";
 		},
   	initSwiper:function(){
   		var swiper = new Swiper('.swiper-container-h', {
@@ -112,6 +125,17 @@ new Vue({
   	}
 	
 	
- }
+  }
+//,
+//router: [
+//	{
+//		path: '/',
+//		redirect: '/recommend'
+//	},
+//  {
+//  	path:'/user',
+//  	component:userCenter
+//  }
+//]
 })
 

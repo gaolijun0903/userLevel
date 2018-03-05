@@ -33,26 +33,26 @@
 			<div class="linewraper"><div class="linebar" v-bind:style="{width:lineBar}"></div></div>
 			<div class="points">
 				<div class="progressPointBox">
-					<div class="progressPoint progressPointPass"></div>
+					<div class="progressPoint" :class="{'progressPointPass':userInfo.level>0,'progressPointCur':userInfo.level==0}"></div>
 				</div>
 				<div class="progressPointBox">
-					<div class="progressPoint  progressPointCur"></div>
+					<div class="progressPoint" :class="{'progressPointPass':userInfo.level>1,'progressPointCur':userInfo.level==1}"></div>
 				</div>
 				<div class="progressPointBox">
-					<div class="progressPoint"></div>
+					<div class="progressPoint" :class="{'progressPointPass':userInfo.level>2,'progressPointCur':userInfo.level==2}"></div>
 				</div>
 				<div class="progressPointBox">
-					<div class="progressPoint"></div>
+					<div class="progressPoint" :class="{'progressPointPass':userInfo.level>3,'progressPointCur':userInfo.level==3}"></div>
 				</div>
 			</div>
 			<div class="texts">
-				<div class="progressText progressTextPass">银卡</div>
-				<div class="progressText progressTextCur">金卡</div>
-				<div class="progressText">白金卡</div>
-				<div class="progressText">钻石卡</div>
+				<div class="progressText " :class="{'progressTextPass':userInfo.level>0,'progressTextCur':userInfo.level==0}">银卡</div>
+				<div class="progressText" :class="{'progressTextPass':userInfo.level>1,'progressTextCur':userInfo.level==1}">金卡</div>
+				<div class="progressText" :class="{'progressTextPass':userInfo.level>2,'progressTextCur':userInfo.level==2}">白金卡</div>
+				<div class="progressText" :class="{'progressTextPass':userInfo.level>3,'progressTextCur':userInfo.level==3}">钻石卡</div>
 			</div>
 		</div>
-		<div class="guide" v-html="guide"></div>
+		<div class="guide" v-html="guide" @click="showRules"></div>
 	</div>
 	<div class="userLevelRights">
 		<div class="userLevelRightsTitle">会员权益</div>
@@ -104,7 +104,7 @@
 		</div>
 	</div>
 	
-	<div >
+	<!--<div >
         <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
           <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>  
         <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
@@ -114,7 +114,7 @@
        <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
        <p class="text">易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。</p>
        
-    </div>
+    </div>-->
 	
 	<div class="detail" v-show="isShowDetail">
 	    <div class="swiper-container swiper-container-horizontal swiperin">

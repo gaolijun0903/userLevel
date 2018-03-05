@@ -8,27 +8,39 @@
 "userLevelRights":[
     	{
     		"levelTitle":"银卡会员",
+    		"shortTitle":"银卡",
     		"cardId":1,
     		"flag":192,
-    		"rightsArr":[1,1,0,0,0,0,0,0]
+    		"rightsArr":[1,1,0,0,0,0,0,0],
+    		"orders":0,
+    		"miles":0
     	},
     	{
     		"levelTitle":"金卡会员",
+    		"shortTitle":"金卡",
     		"cardId":2,
     		"flag":241,
-    		"rightsArr":[1,1,1,1,1,0,0,0]
+    		"rightsArr":[1,1,1,1,1,0,0,0],
+    		"orders":5,
+    		"miles":50
     	},
     	{
     		"levelTitle":"白金卡会员",
+    		"shortTitle":"白金卡",
     		"cardId":3,
     		"flag":255,
-    		"rightsArr":[1,1,1,1,1,1,1,1]
+    		"rightsArr":[1,1,1,1,1,1,1,1],
+    		"orders":40,
+    		"miles":200
     	},
     	{
     		"levelTitle":"钻石卡会员",
+    		"shortTitle":"钻石卡",
     		"cardId":4,
     		"flag":255,
-    		"rightsArr":[1,1,1,1,1,1,1,1]
+    		"rightsArr":[1,1,1,1,1,1,1,1],
+    		"orders":80,
+    		"miles":500
     	}
     ],
 "rightsList":[
@@ -37,7 +49,7 @@
 			"title":"百万保险",
 			"logo":"./img/right1-baoxian.png",
 			"logoNo":"./img/right1-no.png",
-			"subtitle":"百万保险保险保险",
+			"subtitle":"乘车出行险，按座投保",
 			"description":"易到为每一位乘客的每一次出行进行百万级保险的投保，使乘客在出行过程中的人身和财产安全得到进一步保障，保险及理赔详情，参看《易到百万出行险计划》。",
 			"target":[0,1,2,3],
 			"targetText":"所有会员"
@@ -47,7 +59,7 @@
 			"title":"联盟权益",
 			"logo":"./img/right2-quanyi.png",
 			"logoNo":"./img/right2-no.png",
-			"subtitle":"百万保险保险保险",
+			"subtitle":"联盟商家权益专享",
 			"description":"易到会员可享受平台与品牌合作商联盟合作的商家提供的联盟专属权益或活动优享权益，不同会员级别所享受的权益力度不同。",
 			"target":[0,1,2,3],
 			"targetText":"所有会员"
@@ -57,7 +69,7 @@
 			"title":"商城优惠",
 			"logo":"./img/right3-shangcheng.png",
 			"logoNo":"./img/right3-no.png",
-			"subtitle":"百万保险保险保险",
+			"subtitle":"商城消费，优惠特权",
 			"description":"易到金卡以上会员在商城购买或积分兑换商品时，可享受特别的优惠政策及兑换权益，不同级别的会员所享受的优惠力度不同。",
 			"target":[1,2,3],
 			"targetText":"金卡，白金卡，钻石卡会员"
@@ -67,7 +79,7 @@
 			"title":"升级福包",
 			"logo":"./img/right4-fubao.png",
 			"logoNo":"./img/right4-no.png",
-			"subtitle":"",
+			"subtitle":"升级好礼，福利随机取",
 			"description":"对于升级至金卡，白金卡和钻石卡的用户，可获得用车福包，福包内容涵盖优惠券，红包，积分等多种好礼。",
 			"target":[1,2,3],
 			"targetText":"金卡，白金卡，钻石卡会员"
@@ -77,7 +89,7 @@
 			"title":"专属客服",
 			"logo":"./img/right8-zhuanshu.png",
 			"logoNo":"./img/right8-no.png",
-			"subtitle":"",
+			"subtitle":"客服专线服务",
 			"description":"易到为白金卡和钻石卡会员提供专属客服一对一服务，问题直达，极速处理，专线服务时间8:00-20:00；专线服务：包括咨询，用车问题，理赔以及其他您希望得到的帮助；拨入方式：使用会员绑定的手机号拨打4000-5000-90，系统自动识别进入专线。",
 			"target":[1,2,3],
 			"targetText":"金卡，白金卡，钻石卡会员"
@@ -87,7 +99,7 @@
 			"title":"双倍积分",
 			"logo":"./img/right6-jifen.png",
 			"logoNo":"./img/right6-no.png",
-			"subtitle":"",
+			"subtitle":"订车消费双倍积分特权",
 			"description":"易到白金卡和钻石卡会员在进行用车消费时可获得双倍积分权益。",
 			"target":[2,3],
 			"targetText":"白金卡，钻石卡会员"
@@ -97,7 +109,7 @@
 			"title":"等级保护",
 			"logo":"./img/right7-baoji.png",
 			"logoNo":"./img/right7-no.png",
-			"subtitle":"",
+			"subtitle":"会员等级保护权益",
 			"description":"易到白金卡和钻石卡会员享有会员等级保护特权，白金卡等级身份保留1个月，钻石卡等级身份保级2个月。例如，2月15日升级为白金卡，3月，4月为白金，5月1日根据4月份用车情况重新定级。",
 			"target":[2,3],
 			"targetText":"白金卡，钻石卡会员"
@@ -107,7 +119,7 @@
 			"title":"生日礼遇",
 			"logo":"./img/right5-birth.png",
 			"logoNo":"./img/right5-no.png",
-			"subtitle":"",
+			"subtitle":"会员生日专享特权",
 			"description":"易到为白金卡和钻石卡会员准备了生日礼遇特权，可在生日当天享受易到提供的一系列特别权益，包括用车优惠等，只需完善生日信息，即可生效。",
 			"target":[2,3],
 			"targetText":"白金卡，钻石卡会员"
