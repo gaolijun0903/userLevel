@@ -130,13 +130,13 @@
 			"title":"积分商城",
 			"subTitle":"会员专享优惠",
 			"logo":"./img/active1.png",
-			"href":""
+			"href":"/index.html#/userhandpick/"
 		},
 		{
 			"title":"领任务，赚积分",
 			"subTitle":"会员专享优惠",
 			"logo":"./img/active2.png",
-			"href":""
+			"href":"/index.html#/myJifen/"
 		}
 	]
 }

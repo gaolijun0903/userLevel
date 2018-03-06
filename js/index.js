@@ -2,28 +2,28 @@ new Vue({
   el: '#app',
   data:{
   	inApp: true,
-    http:"//yaoyakun-market.Yongche.org",
+    http:"//",
     //http:"//market.Yongche.com",
+    activeHref:"https://testing-mall-api.yongche.org/",
+    //activeHref:"https://mall.yongche.com/",
     userInfo: {
 				userId:"",
-				level:0,  //0-银卡， 1-金卡， 2-白金卡， 3-钻石卡
-				orders:0,
-				mileage:0,
-				percent:45,
-				isSaveLevel:false
+				level:0,  	//0-银卡， 1-金卡， 2-白金卡， 3-钻石卡
+				orders:0,		//当前订单数
+				mileage:0,	//当前完成里程数
+				percent:45, //当前等级完成百分比
+				isSaveLevel:false  //是否保级状态
 			},
 		leftOrders:3,
 		leftMiles:4,
-    currentLevel:0,
-//  guide:'',
-    isShowDetail:false,
+    isShowDetail:false,  //是否展示权益详情弹窗
     cards:[],
     rightsList:[],
     userLevelRights:[],
     userActives:[]
   },
 	computed:{
-		lineBar:function(){
+		lineBar:function(){  //会员等级进度条
 			var value = 33*this.userInfo.level;
 			//判断是否保级
 			if(!this.userInfo.isSaveLevel && this.userInfo.level<3 ){
@@ -33,13 +33,15 @@ new Vue({
 			}
 			return value+'%';
 		},
-		guide:function(){
+		guide:function(){  //会员等级引导语
 			var str;
 			if(this.userInfo.level<3){
-				str = '差&nbsp;<span class="guideNum">'+this.leftOrders+'</span>&nbsp;单或&nbsp;<span class="guideNum">'+this.leftMiles+'</span>&nbsp;里程，升级到'+this.userLevelRights[this.userInfo.level+1].levelTitle+'&nbsp;&gt;'
+				str = '差&nbsp;<span class="guideNum">'+this.leftOrders
+						+'</span>&nbsp;单或&nbsp;<span class="guideNum">'+this.leftMiles
+						+'</span>&nbsp;里程，升级到'+this.userLevelRights[this.userInfo.level+1].levelTitle+'&nbsp;<span class="arrowpng"></span>';
 			}else{
 				str = '您已经是最高级别享受贵宾权益';
-//				str = '差'+ this.leftOrders +'单继续享有钻石卡特权';
+			//str = '差'+ this.leftOrders +'单继续享有钻石卡特权';
 			}
 			return str;
 		}
@@ -88,13 +90,18 @@ new Vue({
 				percent:45,
 				isSaveLevel:true
 			}
+			var vm = this;
+			this.userActives.forEach(function(item){
+				//item.href = vm.activeHref + item.href + vm.userInfo.userId;
+				item.href = vm.activeHref + item.href + "3044285";
+			})
+			
 		},
 		showDetail:function(idx){
 			this.isShowDetail = true;
 			this.swiperDetail.slideTo(idx);
 		},
 		closeDetail:function(){
-			console.log(111)
 			this.isShowDetail = false;
 		},
 		showRules:function(){

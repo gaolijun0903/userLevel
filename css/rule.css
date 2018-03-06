@@ -1,0 +1,102 @@
+html, body {
+  position: relative;
+  height: 100%;
+}
+body {
+  background: #fafafa;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  color:#000;
+  margin: 0;
+  padding: 0;
+}
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+.rulebox{
+	margin-bottom: 1.328125rem;
+	font-size: 0.34375rem;
+	line-height: 0.46875rem;
+	color: #888888;
+}
+.wrapper {
+	padding:0.620313rem 0.421875rem 0;
+}
+.wrapper .title{
+	margin-bottom: 0.239063rem;
+	font-size: 0.4rem;
+	line-height: 0.48rem;
+    font-weight: 600;
+	color: #323232;
+	letter-spacing: -0.01rem;
+}
+.wrapper .contain .desc{
+	display: flex;
+	margin-top: 0.095312rem;
+
+}
+.wrapper .contain .desc .point{
+	width: 0.4rem;
+}
+.wrapper .contain .desc .text{
+	flex:1;
+}
+
+.comparison{
+	height: 4.796875rem;
+	background:#F0F0F0 ;
+}
+.comparison .main {
+    position: relative;
+	padding-top: 0.5rem;
+}
+.main .line{
+    width: 7.0rem;
+    height: 0.05rem;
+    background: #323232;
+    margin: 0.4rem auto 0;
+}
+.main .leveldesc{
+	display: flex;
+    position: absolute;
+    top: 0.6rem;
+    width: 100%;
+}
+.main .leveldesc .block{
+	flex:1;
+	text-align: center;
+}
+.main .leveldesc .block .leveltext{
+	display: inline-block;
+	margin: 0 auto  0.198437rem;
+	padding: 0 0.3rem;
+	border: 1px solid #C8C8C8;
+	border-radius: 5px;
+	font-size: 0.40625rem;
+	line-height: 0.59375rem;
+	color: #323232;
+	background: #F0F0F0 ;
+}
+
+.typetable{
+	border-right: 1px solid #C8C8C8;
+	border-bottom: 1px solid #C8C8C8;
+}
+.typetable .trow{
+	display: flex;
+	height: 1.09375rem;
+}
+.typetable .trow .bd{
+	flex:1;
+	border-top: 1px solid #C8C8C8;
+	border-left: 1px solid #C8C8C8;
+	text-align: center;
+	line-height: 1.09rem;
+}
+.typetable .trow .hd{
+	background:#F0F0F0;
+	font-size: 0.375rem;
+	color: #323232;
+}
+		

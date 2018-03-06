@@ -20,6 +20,9 @@ body {
 ul,li{
 	list-style: none;
 }
+a{
+	text-decoration: none;
+}
 .box{
 	height: 100%;
 }
@@ -46,6 +49,9 @@ ul,li{
 .userLevel .ordersMileage .orders{
 	padding:0 0.106667rem;
 	font-weight: 600;
+}
+.userLevel .ordersMileage .shuxian{
+	opacity: 0.6;
 }
 .userLevel .progressBar{
 	position: relative;
@@ -114,6 +120,13 @@ ul,li{
 	color: #ff5252;
 	font-weight: 400;
 }
+.arrowpng{
+	display: inline-block;
+	width: 0.16rem;
+	height: 0.28rem;
+	background: url(../img/arrow.png) no-repeat ;
+	background-size: 100% 100%;
+}
 .userLevelRights{
 	width: 10.0rem;
 	height: 6.58rem; 
@@ -124,11 +137,13 @@ ul,li{
 	padding: 0 0.746667rem;
 	font-size: 0.453333rem;
 	line-height: 0.6rem;
-	font-weight: 400;
+	font-weight: 600;
 	color: #323232;
 }
 .userLevelRights .swiper-container-h {
   width: 17.4rem;
+  height: 5.733333rem;
+  padding-bottom:0.533333rem;
   margin-left: -3.7rem;
   overflow: visible;
 }
@@ -191,12 +206,13 @@ ul,li{
 	color: #C8C8C8; font-size: 0.32rem; line-height: 0.32rem;
 }
 .userLevelRights .swiper-container-h .swiper-pagination{
-	bottom:  -0.506667rem;
+	bottom: 0;
 }
 .userLevelRights .swiper-container-h .swiper-pagination .swiper-pagination-bullet{
 	width: 7px;
 	height: 7px;
 	background: #e1e1e1;
+	opacity: 1;
 }
 .userLevelRights .swiper-container-h .swiper-pagination .swiper-pagination-bullet-active{
 	background: #888888;

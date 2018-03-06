@@ -27,7 +27,7 @@
 		</div>
 		<div class="levelTitle">{{userLevelRights[userInfo.level].levelTitle}}</div>
 		<div class="ordersMileage">
-			本月已完成<span class="orders">{{userInfo.orders}}</span>单 &nbsp;| <span class="orders">{{userInfo.mileage}}</span>里程
+			本月已完成<span class="orders">{{userInfo.orders}}</span>单 &nbsp;<span class="shuxian">|</span><span class="orders">{{userInfo.mileage}}</span>里程
 		</div>
 		<div class="progressBar">
 			<div class="linewraper"><div class="linebar" v-bind:style="{width:lineBar}"></div></div>
@@ -53,6 +53,7 @@
 			</div>
 		</div>
 		<div class="guide" v-html="guide" @click="showRules"></div>
+		
 	</div>
 	<div class="userLevelRights">
 		<div class="userLevelRightsTitle">会员权益</div>
@@ -90,7 +91,8 @@
 		<div class="userActivesTitle">会员活动</div>
 		<div class="userActivesList">
 			<ul>
-				<li class="userActiveItem" v-for="active in userActives">
+				<a :href="active.href" v-for="active in userActives">
+				<li class="userActiveItem">
 					<div class="activeLogo">
 						<img :src="active.logo" width="100%" height="100%"/>
 					</div>
@@ -99,7 +101,7 @@
 						<div class="activeDesc">{{active.subTitle}}</div>
 					</div>
 				</li>
-				
+				</a>
 			</ul>
 		</div>
 	</div>
