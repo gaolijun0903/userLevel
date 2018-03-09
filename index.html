@@ -23,33 +23,33 @@
 <div id="app" class="box" v-cloak>
     <div class="userLevel" v-if="cards.length && userLevelRights.length">
 		<div class="currentLevel">
-			<img :src="cards[userInfo.level].src" width="100%" height="100%"/>
+			<img :src="cards[userInfo.level_id].src" width="100%" height="100%"/>
 		</div>
-		<div class="levelTitle">{{userLevelRights[userInfo.level].levelTitle}}</div>
+		<div class="levelTitle">{{userLevelRights[userInfo.level_id].levelTitle}}</div>
 		<div class="ordersMileage">
-			本月已完成<span class="orders">{{userInfo.orders}}</span>单 &nbsp;<span class="shuxian">|</span><span class="orders">{{userInfo.mileage}}</span>里程
+			<span class="text">本月已完成</span><span class="text orders">{{userInfo.orders}}</span><span class="text">单</span><span class="text shuxian"></span><span class="text orders">{{userInfo.mileage}}</span><span class="text">里程</span>
 		</div>
 		<div class="progressBar">
 			<div class="linewraper"><div class="linebar" v-bind:style="{width:lineBar}"></div></div>
 			<div class="points">
 				<div class="progressPointBox">
-					<div class="progressPoint" :class="{'progressPointPass':userInfo.level>0,'progressPointCur':userInfo.level==0}"></div>
+					<div class="progressPoint" :class="{'progressPointPass':userInfo.level_id>0,'progressPointCur':userInfo.level_id==0}"></div>
 				</div>
 				<div class="progressPointBox">
-					<div class="progressPoint" :class="{'progressPointPass':userInfo.level>1,'progressPointCur':userInfo.level==1}"></div>
+					<div class="progressPoint" :class="{'progressPointPass':userInfo.level_id>1,'progressPointCur':userInfo.level_id==1}"></div>
 				</div>
 				<div class="progressPointBox">
-					<div class="progressPoint" :class="{'progressPointPass':userInfo.level>2,'progressPointCur':userInfo.level==2}"></div>
+					<div class="progressPoint" :class="{'progressPointPass':userInfo.level_id>2,'progressPointCur':userInfo.level_id==2}"></div>
 				</div>
 				<div class="progressPointBox">
-					<div class="progressPoint" :class="{'progressPointPass':userInfo.level>3,'progressPointCur':userInfo.level==3}"></div>
+					<div class="progressPoint" :class="{'progressPointPass':userInfo.level_id>3,'progressPointCur':userInfo.level_id==3}"></div>
 				</div>
 			</div>
 			<div class="texts">
-				<div class="progressText " :class="{'progressTextPass':userInfo.level>0,'progressTextCur':userInfo.level==0}">银卡</div>
-				<div class="progressText" :class="{'progressTextPass':userInfo.level>1,'progressTextCur':userInfo.level==1}">金卡</div>
-				<div class="progressText" :class="{'progressTextPass':userInfo.level>2,'progressTextCur':userInfo.level==2}">白金卡</div>
-				<div class="progressText" :class="{'progressTextPass':userInfo.level>3,'progressTextCur':userInfo.level==3}">钻石卡</div>
+				<div class="progressText " :class="{'progressTextPass':userInfo.level_id>0,'progressTextCur':userInfo.level_id==0}">银卡</div>
+				<div class="progressText" :class="{'progressTextPass':userInfo.level_id>1,'progressTextCur':userInfo.level_id==1}">金卡</div>
+				<div class="progressText" :class="{'progressTextPass':userInfo.level_id>2,'progressTextCur':userInfo.level_id==2}">白金卡</div>
+				<div class="progressText" :class="{'progressTextPass':userInfo.level_id>3,'progressTextCur':userInfo.level_id==3}">钻石卡</div>
 			</div>
 		</div>
 		<div class="guide" v-html="guide" @click="showRules"></div>
