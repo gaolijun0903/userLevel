@@ -48,8 +48,8 @@ new Vue({
 		}
 	},
   created: function(){
-  	// this.token = this.getCookie('_app_token_v3');
-  	this.token = "4_eyeHVgdnL4tGkQWCQQu5Xgb6x0GIAVvTyDJWGXFhc";
+    this.token = this.getCookie('_app_token_v3');
+//	this.token = "4_eyeHVgdnL4tGkQWCQQu5Xgb6x0GIAVvTyDJWGXFhc";
   	this.initData();
   },
   methods:{
@@ -64,10 +64,6 @@ new Vue({
 		    vm.userLevelRights = data.userLevelRights;
 		    vm.userActives = data.userActives;
 		    vm.getUserInfo();
-		    vm.$nextTick(function(){
-		    	vm.initSwiper();
-		  		vm.initDetailSwiper();
-		    })
 		  })
 		  .catch(function (error) {
 		    console.log(error);
@@ -91,8 +87,12 @@ new Vue({
 			  	console.log(vm.userInfo);
 			  	vm.userActives.forEach(function(item){
 						item.href = vm.activeHref + item.href + vm.userInfo.userId;
-						//item.href = vm.activeHref + item.href + "3044285";
+//						item.href = vm.activeHref + item.href + "3044285";
 					})
+			    vm.$nextTick(function(){
+			    	vm.initSwiper();
+			  		vm.initDetailSwiper();
+			    })
 			  })
 			  .catch(function (error) {
 			    console.log(error);
